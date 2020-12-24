@@ -35,7 +35,7 @@ namespace DoesntMakeAnySenseTask
 
                 Console.WriteLine("First Case:");
 
-                var firstCase = data.ThisDoesntMakeAnySense(i => i.Equals(i), () => new[] { 1, 2, 3 });
+                var firstCase = data.ThisDoesntMakeAnySense(i => true, () => new[] { 1, 2, 3 });
 
                 foreach (var i in firstCase)
                 {
@@ -48,7 +48,7 @@ namespace DoesntMakeAnySenseTask
                 Console.WriteLine();
                 Console.WriteLine("Second case:");
 
-                var secondCase = data.ThisDoesntMakeAnySense(i => i.Equals(null), () => new[] { 1, 2, 3 });
+                var secondCase = data.ThisDoesntMakeAnySense(i => false, () => new[] { 1, 2, 3 });
 
                 foreach (var i in secondCase)
                 {
@@ -63,7 +63,7 @@ namespace DoesntMakeAnySenseTask
 
                 data = null;
 
-                var thirdCase = data.ThisDoesntMakeAnySense(i => i == 0, () => new[] { 1, 2, 3 });
+                var thirdCase = data.ThisDoesntMakeAnySense(i => false, () => new[] { 1, 2, 3 });
 
                 foreach (var i in thirdCase)
                 {
